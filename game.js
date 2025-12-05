@@ -73,18 +73,15 @@ function closeLeaderboard() {
 // ---------------------------
 // RECHARGER JETONS
 // ---------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('refill-tokens').onclick = () => {
-    if (playerTokens > 0) {
-      alert("Tu as encore des jetons !");
-      return;
-    }
-    playerTokens = 100;
-    updateTokens();
-    alert("Tes jetons ont été rechargés !");
-  };
-});
-
+document.getElementById('refill-tokens').onclick = () => {
+  if (playerTokens > 0) {
+    alert("Tu as encore des jetons !");
+    return;
+  }
+  playerTokens = 100;
+  updateTokens();
+  alert("Tes jetons ont été rechargés !");
+}
 
 // ---------------------------
 // ANIMATION JETONS QUI TOMBENT
@@ -320,5 +317,3 @@ function loadGuessNumber(container) {
     updateTokens();
   }
 }
-
-
