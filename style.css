@@ -1,0 +1,185 @@
+/* ---------------------------
+  RESET & BASE
+---------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0b0b0b, #1c1c1c);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ---------------------------
+  HEADER / TOKEN BALANCE
+---------------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+#token-balance {
+  font-size: 1.7em;
+  padding: 10px 25px;
+  background: linear-gradient(90deg, #ffd700, #ff8c00);
+  border-radius: 30px;
+  color: #000;
+  box-shadow: 0 0 20px #ffd700;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+#token-balance.animate {
+  transform: scale(1.3);
+  box-shadow: 0 0 35px #fff, 0 0 50px #ffd700;
+}
+
+/* ---------------------------
+  BUTTONS
+---------------------------- */
+button {
+  padding: 15px 25px;
+  margin: 5px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.8);
+}
+
+button.game-btn {
+  background: linear-gradient(45deg, #ff0000, #ff8c00);
+  color: #fff;
+}
+
+button.game-btn:hover {
+  background: linear-gradient(45deg, #ff8c00, #ffd700);
+}
+
+/* ---------------------------
+  MENU PRINCIPAL
+---------------------------- */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 800px;
+}
+
+/* ---------------------------
+  GAME AREA
+---------------------------- */
+#game-area {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 600px;
+}
+
+#game-container {
+  background: rgba(0,0,0,0.8);
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px #ff8c00;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+input[type=number], select {
+  padding: 10px;
+  margin: 10px 5px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  width: 100px;
+  text-align: center;
+}
+
+/* ---------------------------
+  MESSAGES DE GAIN
+---------------------------- */
+#slot-msg, #roulette-msg, #dice-msg, #wheel-msg, #coin-msg, #guess-msg {
+  margin-top: 15px;
+  font-size: 1.3em;
+  min-height: 25px;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ff0;
+  transition: all 0.3s;
+}
+
+/* ---------------------------
+  LEADERBOARD
+---------------------------- */
+#leaderboard-area {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+#leaderboard-list {
+  list-style: none;
+  margin-top: 15px;
+  padding: 0;
+}
+
+#leaderboard-list li {
+  font-size: 1.2em;
+  background: rgba(255, 215, 0, 0.1);
+  margin: 5px 0;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #ffd700;
+}
+
+/* ---------------------------
+  ANIMATIONS
+---------------------------- */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(-20px);}
+  to {opacity:1; transform: translateY(0);}
+}
+
+/* ---------------------------
+  CONTAINER POUR JETONS ANIMÉS
+---------------------------- */
+#token-animation {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+/* BONUS: scintillement léger */
+#token-balance::after {
+  content: ' ✨';
+  animation: sparkle 1s infinite alternate;
+}
+
+@keyframes sparkle {
+  from {text-shadow: 0 0 5px #fff;}
+  to {text-shadow: 0 0 20px #ffd700;}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎰 Mini Casino Premium</title>
+  <link rel="stylesheet" href="../public/style.css">
+  <script src="../public/game.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header style="display:flex; justify-content:space-between; align-items:center; max-width:800px; width:90%; margin:auto; padding:10px 0;">
+    <div id="token-balance">Jetons : 100</div>
+    <button id="refill-tokens">💰 Recharger</button>
+  </header>
+
+  <!-- MENU PRINCIPAL -->
+  <section id="menu" style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px;">
+    <button class="game-btn" onclick="openGame('slots')">🎰 Slots</button>
+    <button class="game-btn" onclick="openGame('roulette')">🎡 Roulette</button>
+    <button class="game-btn" onclick="openGame('dice')">🎲 Dés</button>
+    <button class="game-btn" onclick="openGame('wheel')">🌀 Roue</button>
+    <button class="game-btn" onclick="openGame('coinFlip')">🪙 Pile ou Face</button>
+    <button class="game-btn" onclick="openGame('guessNumber')">🔢 Chiffre Mystère</button>
+    <button class="game-btn" onclick="openLeaderboard()">🏆 Leaderboard</button>
+  </section>
+
+  <!-- GAME AREA -->
+  <section id="game-area" class="hidden" style="margin-top:30px; max-width:600px; width:90%; margin:auto; padding:20px;">
+    <div id="game-container"></div>
+    
+  </section>
+
+  <!-- LEADERBOARD -->
+  <section id="leaderboard-area" class="hidden" style="margin-top:30px; max-width:600px; width:90%; margin:auto;">
+    <h2>🏆 Leaderboard</h2>
+    <ul id="leaderboard-list"></ul>
+  </section>
+
+  <!-- CONTAINER POUR JETONS ANIMÉS -->
+  <div id="token-animation" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;"></div>
+</body>
+
